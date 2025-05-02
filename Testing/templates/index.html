@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Krammarly: Korean Text Classifier</title>
+</head>
+<body>
+  <h1>Krammarly: Korean Text Classifier</h1>
+  <h2>KLUE-BERT based Classifier that shows text domain and formality</h2>
+
+  <form method="post">
+    <textarea name="text" rows="6" cols="60" placeholder="Enter Korean text here...">{{ user_input or '' }}</textarea><br><br>
+    <input type="submit" value="Classify">
+  </form>
+
+  {% if user_input %}
+    <h3>Your Input:</h3>
+    <p style="white-space: pre-wrap;">{{ user_input }}</p>
+  {% endif %}
+
+  {% if prediction %}
+    <h3>Classification Result:</h3>
+    <p>{{ prediction }}</p>
+  {% endif %}
+</body>
+</html>
